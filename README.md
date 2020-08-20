@@ -1,3 +1,5 @@
+# System Administration Repository
+
 # https://techwizard.cloud/
 
 # Downloads https://techwizard.cloud/downloads/
@@ -101,4 +103,12 @@
 <li><a href="https://techwizard.cloud/2013/05/29/publish-site-collection-administrator-report/" target="_blank" rel="noopener">Publish Sharepoint 2010 Site Collection Report</a></li>
 <li><a href="https://techwizard.cloud/2014/03/15/outlook-automation-move-emails-powershell/" target="_blank" rel="noopener">Outlook Automation- Move emails &ndash; Powershell</a></li>
 <li><a href="https://techwizard.cloud/2015/04/18/exchange-2013-health-check/" target="_blank" rel="noopener">Exchange 2013 Health Check</a></li>
+<li><a href="https://techwizard.cloud/2020/08/17/intune-check-particular-app-installation-on-devices/" target="_blank" rel="noopener">Intune &ndash; Check Particular APP installation on Devices</a></li>
+<li><a href="https://techwizard.cloud/2015/05/02/couldnt-find-object-while-modifying-message-delivery-restrictions/" target="_blank" rel="noopener">Distribution List Message Delivery Restrictions FIX</a></li>
+<li><a href="https://techwizard.cloud/2013/06/11/import-legacy-exchange-dn-from-csv/" target="_blank" rel="noopener">Import Legacy exchange DN from CSV</a></li>
+<li><a href="https://techwizard.cloud/2015/11/28/bulk-start-stop-disable-of-windows-services/" target="_blank" rel="noopener">Bulk start, stop, disable of windows services</a></li>
+<li><a href="https://techwizard.cloud/2014/08/04/message-tracking-multiple-users/" target="_blank" rel="noopener">Message Tracking Multiple users</a></li>
+<li><a href="https://techwizard.cloud/2013/11/06/distribution-groups-report-exchange-20072010/" target="_blank" rel="noopener">Distribution Groups Report &ndash; Exchange 2007/2010</a></li>
+<li><a href="https://techwizard.cloud/exchange-2007-and-2010-quota-report/" target="_blank" rel="noopener">Exchange 2007 and 2010 Quota Report</a></li>
+<li><a href="https://techwizard.cloud/2017/04/06/auto-reply-multiple-users/" target="_blank" rel="noopener">Auto Reply multiple Users</a></li>
 </ul>
