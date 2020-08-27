@@ -1,19 +1,66 @@
-<#	
-    .NOTES
-    ===========================================================================
-    Created with: 	ISE
-    Created on:   	8/13/2020 1:46 PM
-    Created by:   	Vikas Sukhija
-    Organization: 	
-    Filename:      IntuneDeviceApplicationFind.ps1
-    ===========================================================================
-    .DESCRIPTION
-    Find and report particular application installed on devices
+<#PSScriptInfo
+
+.VERSION 1.1
+
+.GUID d1e8624e-4887-44d5-bf2e-2cc56aaa449b
+
+.AUTHOR Vikas Sukhija
+
+.COMPANYNAME TechWizard
+
+.COPYRIGHT Vikas Sukhija
+
+.TAGS
+
+.LICENSEURI
+
+.PROJECTURI http://techwizard.cloud/2020/08/17/intune-check-particular-app-installation-on-devices
+
+.ICONURI
+
+.EXTERNALMODULEDEPENDENCIES 
+
+.REQUIREDSCRIPTS
+
+.EXTERNALSCRIPTDEPENDENCIES
+
+.RELEASENOTES
+http://techwizard.cloud/2020/08/17/intune-check-particular-app-installation-on-devices
+
+.PRIVATEDATA
+Update: 8/27/2020 fixe dteh bug of folder creation
 #>
+
+<# 
+
+.DESCRIPTION 
+ Find and report particular application installed on devices 
+
+#> 
 param (
   [Parameter(Mandatory = $true)]
   [string]$Application
   )
+
+function New-FolderCreation
+{
+  [CmdletBinding()]
+  param
+  (
+    [Parameter(Mandatory = $true)]
+    [string]$foldername
+  )
+	
+
+  $logpath  = (Get-Location).path + "\" + "$foldername" 
+  $testlogpath = Test-Path -Path $logpath
+  if($testlogpath -eq $false)
+  {
+    #Start-ProgressBar -Title "Creating $foldername folder" -Timer 10
+    $null = New-Item -Path (Get-Location).path -Name $foldername -Type directory
+  }
+}####new folder creation
+
 function Write-Log
 {
   [CmdletBinding()]
@@ -140,8 +187,8 @@ Write-Log -Message "Script Finished" -path $log
 # SIG # Begin signature block
 # MIIccAYJKoZIhvcNAQcCoIIcYTCCHF0CAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUyKZm7ID3XfACX/r7BLwmEsJm
-# hDegghefMIIFKDCCBBCgAwIBAgIQBBcjfnd2/0lPtk4Ac2XkEzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUlTenW4QApBD7gzGI6O/y1sow
+# HTugghefMIIFKDCCBBCgAwIBAgIQBBcjfnd2/0lPtk4Ac2XkEzANBgkqhkiG9w0B
 # AQsFADByMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYD
 # VQQLExB3d3cuZGlnaWNlcnQuY29tMTEwLwYDVQQDEyhEaWdpQ2VydCBTSEEyIEFz
 # c3VyZWQgSUQgQ29kZSBTaWduaW5nIENBMB4XDTIwMDcwODAwMDAwMFoXDTIzMDcx
@@ -272,22 +319,22 @@ Write-Log -Message "Script Finished" -path $log
 # aWdpQ2VydCBTSEEyIEFzc3VyZWQgSUQgQ29kZSBTaWduaW5nIENBAhAEFyN+d3b/
 # SU+2TgBzZeQTMAkGBSsOAwIaBQCgeDAYBgorBgEEAYI3AgEMMQowCKACgAChAoAA
 # MBkGCSqGSIb3DQEJAzEMBgorBgEEAYI3AgEEMBwGCisGAQQBgjcCAQsxDjAMBgor
-# BgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBR1APXmb7RMJqr844nM1lPbyGkPBDAN
-# BgkqhkiG9w0BAQEFAASCAQBYlenZqU70YdNldEBFQdgHmGjKPHawQWSVl0SmttDX
-# dtskKMfxq2SZtFhvAk+ydU8vWMBKyelpvPRpWbolnkzmZDba9mEk9u4YfkJqUaOo
-# +ZhjyckzXuRtezaHg1ln+nCegvoXjlpmfci+NpEYHB6vCZwKeBczi5PshipKRQpI
-# kORL0DXYZqG4Gl7O1gCq6ciqoDBbYgbx/5BslEisTm48C9mM4kHnMDKhg9hmhcHi
-# YFnP9m91Ta6ICT9WLwRaiFQ0RwH+FmSDjLoa87xDk1Mw9KXq5dWbDQmtdOG6HL8r
-# P5EvEimD/HE5O5b1t3gYVqwpo0FPku9aLCq+ZJZwPYYtoYICDzCCAgsGCSqGSIb3
+# BgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBQE5+oxTByjQPL/jlMA1HzgW8TgBDAN
+# BgkqhkiG9w0BAQEFAASCAQDXWFAjquzwdpMFQYFstYFCYiQG6+cgACqH+U36HvqX
+# DoHdroFcvkin1uA90xPlwqFqARr1kZfFuzx4EWCFxnXTnY/3eaNU7yaWa8CLr+K/
+# ng7F1//ZpYl0I/QnKjhiOWqtnMVBXoI0chwUdIeX7PZmIIJjKsi7rCrK+x/pfjVP
+# Gj/RbdYenkyQvf/sExRy9D2X9r/C2MIwvXKnHXo/KjXWhQbDfZ4vZjFUy2XBDOjx
+# BT4k7J56j5gpYYkGs2hAwsCG64AYu7ZMRQtqmWjd6uoVHgm2C6D7bG5zyCB0qT54
+# 1jd1REDQ9xax4E9rV6YZXGHtifZ/i+LfBBdOm9M3/iaMoYICDzCCAgsGCSqGSIb3
 # DQEJBjGCAfwwggH4AgEBMHYwYjELMAkGA1UEBhMCVVMxFTATBgNVBAoTDERpZ2lD
 # ZXJ0IEluYzEZMBcGA1UECxMQd3d3LmRpZ2ljZXJ0LmNvbTEhMB8GA1UEAxMYRGln
 # aUNlcnQgQXNzdXJlZCBJRCBDQS0xAhADAZoCOv9YsWvW1ermF/BmMAkGBSsOAwIa
 # BQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0y
-# MDA4MTcwMzIzMzlaMCMGCSqGSIb3DQEJBDEWBBR4sTFd6NT4wn8YgdSZVVGqjW/t
-# kDANBgkqhkiG9w0BAQEFAASCAQARpZiHVYWDfwhUSKrO9c5v3FlC6xqkutemC+P9
-# SjHvf7TcssZqxG4NlR2dRicniF5/OhwCDt0QoHF4RsT4XhrDte+f7P12o5K/pqza
-# RCc+Y4lR94YFtHHFCNjWyUn1g73uANxz5nrMvToJ2N2VexaSoChxRSLXR/IiRyco
-# rspQ5Oa/mbYk/HjnaU7LkWYZx+KtyMLFar7S1Pe4+S0Rm9o8bTJH6gB6QBh6u8LT
-# QK/x3yc9urZAD3GGUUS+I6Q8xdjV6uZ5zEgVKrf0luh3IdXxPBuqw3GuIF0f211N
-# SR/QmlSFeIqlVxwV9wNzrZrKGp6O/EcBdAFlk2czyzAzAd1/
+# MDA4MjcyMjAyMzNaMCMGCSqGSIb3DQEJBDEWBBS3EMhbFunnXsjEAM2cnLDJgK+c
+# jzANBgkqhkiG9w0BAQEFAASCAQB5quF6gNF9CrROXr81hwjGWPxKhtVss8+/BkoY
+# ZGx0xr7U1Na3L146XmZkJKQd8BumraqQtRJBZr01BAD8wD3dU+/IbpckCpAcdjDr
+# jXI58ZKdVZHj07i2wNxIm9VfuPQBfiw0JhRgWkB6/zY4osLLCln2LpYhvFgRZhMp
+# lgB8+o+TXbMRUPUZQN0OYau1pgt8kHbC0SQFfeByxc53cNSHZdyPA76Se+weP+mD
+# 9n0lL9W0TKvMW4N17aGonuvo3TOHSNxiN07BBgMBLik3jzGtoGVMw3lqMWlpPpE9
+# ix07tz1FpU7OlSiAwQ1i0OpsHd7+gD92rvdSBJXoyj/umTru
 # SIG # End signature block
