@@ -111,4 +111,9 @@
 <li><a href="https://techwizard.cloud/2013/11/06/distribution-groups-report-exchange-20072010/" target="_blank" rel="noopener">Distribution Groups Report &ndash; Exchange 2007/2010</a></li>
 <li><a href="https://techwizard.cloud/exchange-2007-and-2010-quota-report/" target="_blank" rel="noopener">Exchange 2007 and 2010 Quota Report</a></li>
 <li><a href="https://techwizard.cloud/2017/04/06/auto-reply-multiple-users/" target="_blank" rel="noopener">Auto Reply multiple Users</a></li>
+ <li><a href="https://techwizard.cloud/2016/02/22/powershell-robocopy-launching-multiple-concurrent-sessions/" target="_blank" rel="noopener">PowerShell Robocopy launching multiple concurrent sessions</a></li>
+<li><a href="https://techwizard.cloud/2011/04/28/robocopy-for-launching-multiple-concurrent-sessions/" target="_blank" rel="noopener">VBScript &ndash; robocopy for launching multiple concurrent sessions</a></li>
+<li><a href="https://techwizard.cloud/2016/01/31/powershell-ping-machines-and-report-in-excel/" target="_blank" rel="noopener">PowerShell &ndash; Ping Machines and report in Excel</a></li>
+<li><a href="https://techwizard.cloud/2014/10/09/powershell-creating-a-home-folder-for-users/" target="_blank" rel="noopener">PowerShell Creating a Home Folder for Users</a></li>
+<li><a href="https://techwizard.cloud/disk-space-and-services-threshold-monitoring/" target="_blank" rel="noopener">Disk Space and Services Threshold Monitoring</a></li>
 </ul>
