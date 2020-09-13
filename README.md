@@ -116,4 +116,5 @@
 <li><a href="https://techwizard.cloud/2016/01/31/powershell-ping-machines-and-report-in-excel/" target="_blank" rel="noopener">PowerShell &ndash; Ping Machines and report in Excel</a></li>
 <li><a href="https://techwizard.cloud/2014/10/09/powershell-creating-a-home-folder-for-users/" target="_blank" rel="noopener">PowerShell Creating a Home Folder for Users</a></li>
 <li><a href="https://techwizard.cloud/disk-space-and-services-threshold-monitoring/" target="_blank" rel="noopener">Disk Space and Services Threshold Monitoring</a></li>
+ <li><a href="https://techwizard.cloud/2020/09/13/exchange-server-health-check/" target="_blank" rel="noopener">Exchange Server Health Check</a></li>
 </ul>
