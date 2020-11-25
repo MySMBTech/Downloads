@@ -3,11 +3,12 @@
     ===========================================================================
     Created on:   	11/23/2020 9:16 PM
     Created by:   	Vikas Sukhija
-    Organization: 	
+    Organization: 	TechWizard.cloud
     Filename:       GetUsersInEmergencyLocation.ps1
     ===========================================================================
     .DESCRIPTION
     Extract Teams users in emegency Location
+    https://techwizard.cloud/2020/11/25/teams-exporting-users-in-emergency-location/
 #>
 ###########################################################################
 param (
@@ -142,5 +143,6 @@ foreach($u in $users){
 }
 Write-log -message "export to CSV file" -path $log
 $collection | Export-Csv $report -NoTypeInformation
-
+Write-log -message "Removing SKOB Online Shell" -path $log
+RemoveSOL
 #################################################################
