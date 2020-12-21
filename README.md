@@ -122,4 +122,6 @@
 <li><a href="https://techwizard.cloud/2017/07/23/check-upn-and-sip-match-skype-for-business-online/" target="_blank" rel="noopener">Check UPN and SIP match Skype for Business Online</a></li>
 <li><a href="https://techwizard.cloud/message-tracking-script/" target="_blank" rel="noopener">Message tracking script</a></li>
 <li><a href="https://techwizard.cloud/2014/12/13/recoverable-deleted-items-report/" target="_blank" rel="noopener">Recoverable deleted items Report</a></li>
+ <li><a href="https://techwizard.cloud/2020/11/25/teams-exporting-users-in-emergency-location/" target="_blank" rel="noopener">Teams &ndash; Exporting Users In Emergency Location</a></li>
+<li><a href="https://techwizard.cloud/2020/12/21/powershell-teams-phone-number-assignment/" target="_blank" rel="noopener">PowerShell &ndash; Teams Phone number Assignment</a></li>
 </ul>
