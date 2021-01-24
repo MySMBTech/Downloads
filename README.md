@@ -124,4 +124,5 @@
 <li><a href="https://techwizard.cloud/2014/12/13/recoverable-deleted-items-report/" target="_blank" rel="noopener">Recoverable deleted items Report</a></li>
  <li><a href="https://techwizard.cloud/2020/11/25/teams-exporting-users-in-emergency-location/" target="_blank" rel="noopener">Teams &ndash; Exporting Users In Emergency Location</a></li>
 <li><a href="https://techwizard.cloud/2020/12/21/powershell-teams-phone-number-assignment/" target="_blank" rel="noopener">PowerShell &ndash; Teams Phone number Assignment</a></li>
+ <li><a href="https://techwizard.cloud/2021/01/24/distribution-group-based-on-head-of-organization/" target="_blank" rel="noopener">Distribution Group based on Head of Organization</a></li>
 </ul>
