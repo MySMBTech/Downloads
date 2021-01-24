@@ -4,7 +4,8 @@
     Created with: 	ISE
     Created on:   	1/12/2021
     Created by:   	Vikas Sukhija
-    Organization: 	
+    Organization:   TechWizard.cloud
+    Project:	      https://techwizard.cloud/2021/01/24/distribution-group-based-on-head-of-organization/
     Filename:     	DynamicDLBasedonHead.ps1
     Code Credits:   https://lazywinadmin.com/2014/10/powershell-who-reports-to-whom-active.html
     ===========================================================================
