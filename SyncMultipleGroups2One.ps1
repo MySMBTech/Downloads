@@ -5,6 +5,7 @@
     Created on:   	2/5/2021 1:46 PM
     Created by:   	Vikas Sukhija
     Organization: 	TechWizard.cloud
+    Project URL:    https://techwizard.cloud/2021/02/07/sync-multiple-groups-to-single-group/
     Filename:     	SyncmultipleGroupsWithOne.ps1
     ===========================================================================
     .DESCRIPTION
@@ -12,7 +13,6 @@
 #>
 param (
   [string[]]$groups = $(Read-Host "Enter Groups as Source seprated by Coma"),
-  [string]$exgroup = $(Read-Host "Enter Group for Exclusion"),
   [string]$Desgroup = $(Read-Host "Enter the Destination Group"),
   [string]$smtpserver = $(Read-Host "Enter SMTP Server"),
   [string]$from = $(Read-Host "Enter From Address"),
