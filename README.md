@@ -125,4 +125,11 @@
  <li><a href="https://techwizard.cloud/2020/11/25/teams-exporting-users-in-emergency-location/" target="_blank" rel="noopener">Teams &ndash; Exporting Users In Emergency Location</a></li>
 <li><a href="https://techwizard.cloud/2020/12/21/powershell-teams-phone-number-assignment/" target="_blank" rel="noopener">PowerShell &ndash; Teams Phone number Assignment</a></li>
  <li><a href="https://techwizard.cloud/2021/01/24/distribution-group-based-on-head-of-organization/" target="_blank" rel="noopener">Distribution Group based on Head of Organization</a></li>
+ <li><a href="https://github.com/VikasSukhija/Downloads/blob/master/setacceptmessagesonlyfrom.ps1" target="_blank" rel="noopener">Add users to acceptmessagesonlyfrom</a></li>
+<li><a href="https://techwizard.cloud/2014/05/09/exchange-2010-database-white-space-report/" target="_blank" rel="noopener">Exchange 2010 Database White Space Report</a></li>
+<li><a href="https://github.com/VikasSukhija/Downloads/blob/master/checkgroupDN.ps1" target="_blank" rel="noopener">Get Group Distinguished Name</a></li>
+<li><a href="https://techwizard.cloud/2012/04/29/deleting-iis-logs-cas-servers-on-the-basis-of-age/" target="_blank" rel="noopener">Delete files older than X days</a></li>
+<li><a href="https://techwizard.cloud/2014/03/28/check-lync-services-and-start-if-not-running/" target="_blank" rel="noopener">PowerShell: Check Lync Services and start if not running</a></li>
+<li><a href="https://github.com/VikasSukhija/Downloads/blob/master/chkusrdn.ps1" target="_blank" rel="noopener">Get User Distinguished Name</a></li>
+<li><a href="https://techwizard.cloud/2021/02/07/sync-multiple-groups-to-single-group/" target="_blank" rel="noopener">Sync Multiple Groups to Single Group</a></li>
 </ul>
