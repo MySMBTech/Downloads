@@ -190,7 +190,7 @@ function LaunchMSOL {
 	
 #####################Load variables and log###############
 $log = Write-Log -Name "FixPHSPasswordExpiry-Log" -folder "logs" -Ext "log"
-$ObjFilter = "(&(objectClass=user)(objectCategory=person)(!useraccountcontrol:1.2.840.113556.1.4.803:=2)))"
+$ObjFilter = "(&(objectClass=user)(objectCategory=person)(!useraccountcontrol:1.2.840.113556.1.4.803:=2))"
 ##################get-credentials##########################
 Write-Log -Message "Get Crendetials for Admin ID for MSOnline Connection" -path $log
 if(Test-Path -Path ".\Password.xml"){
@@ -236,7 +236,7 @@ try{
         }
         else{
            Write-Log -Message "Setting force change password for $upn - $sam" -path $log
-          #Set-MsolUserPassword -UserPrincipalName $upn -ForceChangePassword:$true -ForceChangePasswordOnly:$true
+           Set-MsolUserPassword -UserPrincipalName $upn -ForceChangePassword:$true -ForceChangePasswordOnly:$true
         }
       }
       else{
