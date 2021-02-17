@@ -158,7 +158,7 @@ function Set-Recyclelogs
       }
     }
     
-   "Path"
+    "Path"
     {
       $path1 = $folderlocation
       if ($PsCmdlet.ShouldProcess($path1 , "Delete")) 
@@ -190,16 +190,18 @@ function LaunchMSOL {
 	
 #####################Load variables and log###############
 $log = Write-Log -Name "FixPHSPasswordExpiry-Log" -folder "logs" -Ext "log"
-
+$ObjFilter = "(&(objectClass=user)(objectCategory=person)(!useraccountcontrol:1.2.840.113556.1.4.803:=2)))"
 ##################get-credentials##########################
 Write-Log -Message "Get Crendetials for Admin ID for MSOnline Connection" -path $log
 if(Test-Path -Path ".\Password.xml"){
   Write-Log -Message "Password file Exists" -path $log
 }else{
   Write-Log -Message "Generate password" -path $log
-  Get-Credential | Export-Clixml ".\Password.xml"
+  $Credential = Get-Credential 
+  $Credential | Export-Clixml ".\Password.xml"
 }
 #############################################################
+$Credential = $null
 $Credential = Import-Clixml ".\Password.xml"
 
 ########################Start Script#########################
@@ -208,7 +210,8 @@ $collusers = @()
 
 try{
   Write-Log -Message "Fetch all Enabled Users with Password Expiry Status True" -path $log
-  $collusers = Get-ADUser -Filter {(Enabled -eq $true ) -and (passwordexpired -eq $true)} -properties passwordexpired
+  $collusers = Get-ADUser -LDAPFilter $ObjFilter -properties passwordexpired | Select DistinguishedName, SamAccountName, PasswordExpired, UserPrincipalName
+  $collusers = $collusers.where{($_.passwordexpired -eq $true)}
   Write-Log -Message "Fetched users that have password Expiry status is True" -path $log
 }
 catch{
@@ -219,13 +222,28 @@ catch{
 }
 
 if(($collusers.count -le $countofchanges) -and ($collusers.count -gt 0)){
-  try{
+try{
     LaunchMSOL -Credential $Credential
+    Connect-AzureAD -Credential $Credential
     foreach($user in $collusers){
       $upn = $user.UserPrincipalName
-      Write-Log -Message "Set $upn to Force Change password" -path $log
-      #Set-MsolUserPassword -UserPrincipalName $upn -ForceChangePassword:$true -ForceChangePasswordOnly:$true
+      $sam = $user.SamAccountName
+      $msoluser = Get-MsolUser -UserPrincipalName $upn
+      if($msoluser){
+        $azureaduser = Get-AzureADUser -ObjectId $msoluser.objectid
+        if($azureaduser.PasswordProfile.ForceChangePasswordNextLogin -eq $true){
+          Write-Log -Message "Force Change password is already set for $upn - $sam" -path $log
+        }
+        else{
+           Write-Log -Message "Setting force change password for $upn - $sam" -path $log
+          #Set-MsolUserPassword -UserPrincipalName $upn -ForceChangePassword:$true -ForceChangePasswordOnly:$true
+        }
+      }
+      else{
+        Write-Log -Message "$upn - $sam not found" -path $log
+      }
     }
+    Disconnect-AzureAD
   }
   catch{
     $exception = $_.Exception.Message
