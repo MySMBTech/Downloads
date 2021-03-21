@@ -1,15 +1,40 @@
-<#	
-    .NOTES
-    ===========================================================================
-    Created with: 	ISE
-    Created on:   	2/3/2021 1:46 PM
-    Created by:   	Vikas Sukhija
-    Organization: 	http://techwizard.cloud
-    Filename:     	PIMReportAdminsv2.ps1
-    ===========================================================================
-    .DESCRIPTION
-    This script will extract the Report of Admins in PIM
+<#PSScriptInfo
+
+.VERSION 1.0
+
+.GUID de9791d3-4f0c-4cb3-ad88-710daa40ac67
+
+.AUTHOR Vikas Sukhija
+
+.COMPANYNAME TechWizard.Cloud
+
+.COPYRIGHT TechWizard.cloud
+
+.TAGS 
+
+.LICENSEURI 
+
+.PROJECTURI https://techwizard.cloud/2021/03/21/azure-pim-admin-report-version-2/
+
+.ICONURI 
+
+.EXTERNALMODULEDEPENDENCIES 
+
+.REQUIREDSCRIPTS 
+
+.EXTERNALSCRIPTDEPENDENCIES 
+
+.RELEASENOTES
+https://techwizard.cloud/2021/03/21/azure-pim-admin-report-version-2/
+
 #>
+
+<# 
+
+.DESCRIPTION 
+ Extract PIM Admin report 
+
+#> 
 #####################Functions#####################
 Param(
  [string]$TenantID = $(Read-Host "Enter TenantId for your Tenant")
@@ -150,7 +175,6 @@ Select-Object UserPrincipalName, RoleID, AssignmentState |
 Export-Csv $Report1 -NoTypeInformation 
 
 ##############################Recycle Logs##########################
-Write-Log -Message "Recycle Logs" -path $log -Severity Information
 
 Write-Log -Message "Script Finished" -path $log -Severity Information
 ###############################################################################
