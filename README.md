@@ -132,4 +132,5 @@
 <li><a href="https://techwizard.cloud/2014/03/28/check-lync-services-and-start-if-not-running/" target="_blank" rel="noopener">PowerShell: Check Lync Services and start if not running</a></li>
 <li><a href="https://github.com/VikasSukhija/Downloads/blob/master/chkusrdn.ps1" target="_blank" rel="noopener">Get User Distinguished Name</a></li>
 <li><a href="https://techwizard.cloud/2021/02/07/sync-multiple-groups-to-single-group/" target="_blank" rel="noopener">Sync Multiple Groups to Single Group</a></li>
+<li><a href="https://techwizard.cloud/2021/03/21/azure-pim-admin-report-version-2/" target="_blank" rel="noopener">Azure PIM Admin Report Version 2</a></li>
 </ul>
