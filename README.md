@@ -133,4 +133,9 @@
 <li><a href="https://github.com/VikasSukhija/Downloads/blob/master/chkusrdn.ps1" target="_blank" rel="noopener">Get User Distinguished Name</a></li>
 <li><a href="https://techwizard.cloud/2021/02/07/sync-multiple-groups-to-single-group/" target="_blank" rel="noopener">Sync Multiple Groups to Single Group</a></li>
 <li><a href="https://techwizard.cloud/2021/03/21/azure-pim-admin-report-version-2/" target="_blank" rel="noopener">Azure PIM Admin Report Version 2</a></li>
+ <li><a href="https://techwizard.cloud/2014/06/15/track-changes-to-active-directory-users-attributes/" target="_blank" rel="noopener">Track Changes to Active Directory Users Attributes</a></li>
+<li><a href="https://techwizard.cloud/2014/02/01/export-ad-group-members-nested-recursive-using-quest-input-via-text-file/" target="_blank" rel="noopener">Export AD group members &ndash; nested / recursive using Quest input via text file</a></li>
+<li><a href="https://techwizard.cloud/2014/08/02/disable-ad-users-in-bulk/" target="_blank" rel="noopener">Disable AD users in Bulk</a></li>
+<li><a href="https://techwizard.cloud/2015/12/26/export-dhcp-statistics/" target="_blank" rel="noopener">Export DHCP Statistics</a></li>
+<li><a href="https://techwizard.cloud/2013/09/27/install-sharepoint-2010-language-packs/" target="_blank" rel="noopener">Install SharePoint 2010 Language packs</a></li>
 </ul>
