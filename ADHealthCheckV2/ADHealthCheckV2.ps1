@@ -365,8 +365,8 @@ Add-Content $report "</html>"
 #############################################Send Email#################################
 
 if(($Smtphost) -and ($EmailReport) -and ($from)){
-$body = Get-Content ".\ADreport.htm"
-Send-MailMessage -SmtpServer $Smtphost -From $from -To $EmailReport -Subject "Active Directory Health Monitor" -Body $body 
+$body = Get-Content $report
+Send-MailMessage -SmtpServer $Smtphost -From $from -To $EmailReport -Subject "Active Directory Health Monitor" -Body $body -BodyAsHtml
 }
 ####################################EnD#################################################
 ########################################################################################
