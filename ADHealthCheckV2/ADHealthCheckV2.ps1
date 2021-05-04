@@ -47,7 +47,7 @@ param (
   $timeout = "60"
 )
 ###########################Define Variables##################################
-
+$EmailReport = $EmailReport -split ','
 $report = ".\ADReport.htm" 
 
 if((test-path $report) -like $false)
