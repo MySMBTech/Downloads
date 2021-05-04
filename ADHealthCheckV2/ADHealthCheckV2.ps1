@@ -1,43 +1,45 @@
 <#PSScriptInfo
- 
-    .VERSION 2.0
- 
-    .GUID ae70e09a-d245-46e3-89c9-891ef951caf2
- 
-    .AUTHOR Vikas Sukhija
- 
-    .COMPANYNAME TechWizard.cloud
- 
-    .COPYRIGHT Vikas Sukhija
- 
-    .TAGS
- 
-    .LICENSEURI
- 
-    .PROJECTURI 
- 
-    .ICONURI
- 
-    .EXTERNALMODULEDEPENDENCIES
- 
-    .REQUIREDSCRIPTS
- 
-    .EXTERNALSCRIPTDEPENDENCIES
- 
-    .RELEASENOTES 
- 
- 
-    .PRIVATEDATA
- 
+
+.VERSION 1.0
+
+.GUID 30c7c087-1268-4d21-8bf7-ee25c37459b0
+
+.AUTHOR Vikas Sukhija
+
+.COMPANYNAME TechWizard.cloud
+
+.COPYRIGHT
+
+.TAGS
+
+.LICENSEURI
+
+.PROJECTURI https://techwizard.cloud/2021/05/04/active-directory-health-check-v2/
+
+.ICONURI
+
+.EXTERNALMODULEDEPENDENCIES 
+
+.REQUIREDSCRIPTS
+
+.EXTERNALSCRIPTDEPENDENCIES
+
+.RELEASENOTES https://techwizard.cloud/2021/05/04/active-directory-health-check-v2/
+
+
+.PRIVATEDATA
+
 #>
 
-<#
-    .DESCRIPTION
+<# 
+
+.DESCRIPTION 
     Date: 12/25/2014
     AD Health Status
     Satus: Ping,Netlogon,NTDS,DNS,DCdiag Test(Replication,sysvol,Services)
     Update: Added Advertising
     Update: 5/3/2021 version2 with parameters to make it more generic 
+
 #> 
 ###############################Paramters####################################
 param (
@@ -365,7 +367,7 @@ Add-Content $report "</html>"
 #############################################Send Email#################################
 
 if(($Smtphost) -and ($EmailReport) -and ($from)){
-$body = Get-Content $report
+[string]$body = Get-Content $report
 Send-MailMessage -SmtpServer $Smtphost -From $from -To $EmailReport -Subject "Active Directory Health Monitor" -Body $body -BodyAsHtml
 }
 ####################################EnD#################################################
