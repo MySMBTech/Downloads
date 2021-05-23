@@ -1,45 +1,51 @@
+
 <#PSScriptInfo
 
-.VERSION 1.0
+.VERSION 1.1
 
-.GUID 401ddfb9-05ba-4ac4-ad43-22e8ff565bfa
+.GUID 72efaf32-287b-45b9-9c19-624071edf40e
 
 .AUTHOR Vikas Sukhija
 
-.COMPANYNAME TechWizard.cloud
+.COMPANYNAME techwizard.cloud
 
-.COPYRIGHT TechWizard.cloud
+.COPYRIGHT techwizard.cloud
 
 .TAGS
 
-.LICENSEURI
+.LICENSEURI https://techwizard.cloud/2021/05/23/office-365-license-assignment-dates/
 
-.PROJECTURI
+.PROJECTURI https://techwizard.cloud/2021/05/23/office-365-license-assignment-dates/
 
 .ICONURI
 
-.EXTERNALMODULEDEPENDENCIES 
+.EXTERNALMODULEDEPENDENCIES AzureAD,ImportExcel 
 
 .REQUIREDSCRIPTS
 
 .EXTERNALSCRIPTDEPENDENCIES
 
 .RELEASENOTES
-
+https://techwizard.cloud/2021/05/23/office-365-license-assignment-dates/
 
 .PRIVATEDATA
+
     Created with: 	ISE
     Created on:   	5/11/2021	
     Filename:     	LicenseAssignmentDates.ps1 
 
 #>
 
+#Requires -Module AzureAD,ImportExcel
+
 <# 
 
 .DESCRIPTION 
- License Assignement Dates 
+ License Assignment Dates 
 
 #> 
+Param(
+$run="run")
 function New-FolderCreation
 {
   [CmdletBinding()]
@@ -142,9 +148,9 @@ try{
       $AssignedTimestamp = get-date $($_.AssignedTimestamp) -Format MM/dd/yy
       ############updated serviceplanid here#######################
       switch($serviceplanid){
-        "54a152dc-90de-4996-93d2-bc47e670fc06" {$coll.DomesticCalling = $AssignedTimestamp}
-        "4ed3ff63-69d7-4fb7-b984-5aec7f605ca8" {$coll.DomesticCallingPrepaid = $AssignedTimestamp}
-        "505e180f-f7e0-4b65-91d4-00d670bbd18c" {$coll.CommunicationCredits = $AssignedTimestamp}
+        "5hhh152dc-90de-4776-93d2-bc476677fc06" {$coll.DomesticCalling = $AssignedTimestamp}
+        "4edfff63-69d7-4f88-b984-5aec56533eca8" {$coll.DomesticCallingPrepaid = $AssignedTimestamp}
+        "50nnn0f-f7e0-4b65-91d4-00d757788888c" {$coll.CommunicationCredits = $AssignedTimestamp}
         default{}
       }
       #####################################################################################
@@ -165,3 +171,4 @@ catch{
 Disconnect-AzureAD
 Write-Log -Message "Script Finished" -path $log
 #################################################################################################
+
